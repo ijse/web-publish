@@ -13,5 +13,11 @@ module.exports = appInfo => {
     defaultViewEngine: 'nunjucks'
   }
 
+  config.sequelize = {
+    dialect: 'sqlite',
+    storage: './db.sqlite',
+    operatorsAliases: false
+  }
+
   return config;
 };

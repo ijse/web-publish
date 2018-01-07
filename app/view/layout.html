@@ -7,7 +7,7 @@
 
 
         {% block css %}
-        <link rel="stylesheet" type="text/css" href="/asset/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/public/asset/bootstrap.min.css" />
         {% endblock %}
 
         {% block header %}
@@ -19,7 +19,12 @@
         {% include 'partials/nav.html' %}
         {% endblock %}
 
-        {% block body %}
-        {% endblock %}
+        <div class="container">
+          {% block body %}
+          {% endblock %}
+        </div>
+
+        <script src="/public/asset/jquery.min.js"></script>
+        <script src="/public/asset/bootstrap.min.js"></script>
     </body>
 </html>

@@ -13,9 +13,5 @@ module.exports = appInfo => {
     defaultViewEngine: 'nunjucks'
   }
 
-  config.static = {
-    prefix: ''
-  }
-
   return config;
 };

@@ -11,6 +11,10 @@ class HomeController extends Controller {
     }
     const user = await this.model.User.create(userProp)
   }
+
+  async logout () {
+    await this.ctx.logout()
+  }
 }
 
 module.exports = HomeController;

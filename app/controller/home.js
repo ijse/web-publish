@@ -2,7 +2,8 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index() {
-    await this.ctx.render('home.html')
+    const { data: prList } = await this.service.github.pr.list()
+    await this.ctx.render('home.html', { prList })
   }
 }
 

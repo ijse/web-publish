@@ -20,5 +20,17 @@ module.exports = appInfo => {
     operatorsAliases: false
   }
 
+  config.github = {
+    authenticate: {
+      type: 'oauth',
+      token: process.env.GH_TOKEN
+    }
+  }
+
+  config.repo = {
+    owner: 'tigerbrokers',
+    repo: 'gem'
+  }
+
   return config;
 };

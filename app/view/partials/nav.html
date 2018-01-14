@@ -4,13 +4,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="menus">
+  <div class="main-nav collapse navbar-collapse" id="menus">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Gem </a>
+        <a class="nav-link" href="/project/tigerbrokers/gem">Gem </a>
       </li>
     </ul>
 
@@ -27,4 +27,14 @@
     </ul>
   </div>
 </nav>
+<script>
+  $('.main-nav .nav-link').each((idx, link) => {
+    const $link = $(link)
+    if ($link.attr('href') === location.pathname) {
+      $link.parent().addClass('active')
+    } else {
+      $link.parent().removeClass('active')
+    }
+  })
+</script>
 {% include 'partials/loginbox.html' %}

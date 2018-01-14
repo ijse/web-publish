@@ -27,10 +27,5 @@ module.exports = appInfo => {
     }
   }
 
-  config.repo = {
-    owner: 'tigerbrokers',
-    repo: 'gem'
-  }
-
   return config;
 };

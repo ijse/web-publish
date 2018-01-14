@@ -1,11 +1,44 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<ul>
-{% for pr in prList %}
-  <li>
-    <a href="{{ pr.html_url }}"> #{{ pr.number}} {{ pr.title }} </a>
-  </li>
-{% endfor %}
-</ul>
+<main class="page-prList">
+  <div class="card-columns">
+    {% for pr in prList %}
+    <div class="pr card">
+      <div class="card-header">
+        <span class="card-title"> #{{ pr.number }} </span>
+      </div>
+      <div class="card-body">
+        <a href="{{ pr.html_url }}" class="card-text"> {{ pr.title }} </a>
+      </div>
+      <div class="card-footer clearfix">
+        <p class="card-text float-left">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+        <div class="btn-group float-right" role="group">
+          <button id="deploy-button" type="button"
+            class="btn btn-sm btn-secondary dropdown-toggle"
+            aria-haspopup="true" aria-expanded="false"
+            data-toggle="dropdown">Deploy To</button>
+          <div class="dropdown-menu" aria-labelledby="deploy-button">
+            <a href class="dropdown-item"> nightly </a>
+            <a href class="dropdown-item"> test </a>
+            <a href class="dropdown-item"> staging </a>
+            <a href class="dropdown-item"> online </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+<style>
+  .page-prList {
+    padding-top: 10px;
+  }
+  .pr.card {
+    display: inline-block;
+    column-break-inside: avoid;
+  }
+</style>
 {% endblock %}

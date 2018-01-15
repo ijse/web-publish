@@ -13,13 +13,6 @@ module.exports = appInfo => {
     defaultViewEngine: 'nunjucks'
   }
 
-  config.sequelize = {
-    dialect: 'sqlite',
-    storage: './db.sqlite',
-    logging: false,
-    operatorsAliases: false
-  }
-
   config.github = {
     authenticate: {
       type: 'oauth',

@@ -10,8 +10,7 @@ module.exports = {
   ],
   dep: [
     'egg',
-    'egg-scripts',
-    'sqlite3'
+    'egg-scripts'
   ],
   devdep: [
     'egg-ci',
